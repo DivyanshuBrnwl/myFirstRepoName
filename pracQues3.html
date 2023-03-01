@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Rotating Image using CSS</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /*  header{
+        height: 40px;
+    } */
+    ul{
+        background-color: black;
+        color: white;
+        /* display: inline; */
+        height: 40px;
+    }
+    li{
+        display: inline;
+        text-decoration: none;
+        padding: 10px 35px;
+        font-size: xx-large;
+    }
+    main{
+        background-image: url("pracQues3B.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 43vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .progress{
+        height: 3px;
+        width: 100vw;
+       background-color:rgb(101, 11, 11);
+        animation: redProgressBar 2s ease-in-out 1 running;
+    }
+    img{
+        animation: rotate 6s ease-in infinite alternate-reverse;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+    @keyframes rotate {
+        0%{
+           transform: rotate(60deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes redProgressBar {
+        100%{
+            width: 100vw;
+            background-color: rgb(113, 13, 13);
+        }
+        70%{
+            width: 70vw;
+            background-color: red;
+        }
+        30%{
+            width: 30vw;
+            background-color: red;
+        }
+        0%{
+            width: 0vw;
+            background-color: red;
+        }
+
+    }
+</style>
+<body>
+    <header>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </header>
+    <div class="progress">
+    </div>
+    <main>
+        <div class="rotating">
+            <img src="circular-economy-image-map-base.png" alt="" width="400px">
+        </div>
+        
+    </main>
+</body>
+</html>
